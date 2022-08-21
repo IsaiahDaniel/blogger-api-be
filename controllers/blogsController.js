@@ -1,5 +1,6 @@
 import asyncHandler from "express-async-handler";
 import ErrorResponse from "../utils/ErrorResponse.js";
+import Blog from "../models/blogModel.js";
 
 // @route       /api/v1/blogs
 // @desc        Get All Blogs
@@ -24,7 +25,7 @@ const getBlogs = asyncHandler(async (req, res) => {
     },
   ];
 
-  //   res.status(200).json(blogs);
+  // const blogs = await Blog.find();
 
   res.status(200).json({ success: true, data: blogs, count: blogs.length });
 });
